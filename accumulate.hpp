@@ -5,9 +5,9 @@
 namespace itertools{
     template<class T>
     struct accumulate{
-        T i;
+        //T i;
         accumulate(T con){
-            i= con;
+            // i= con;
             // for(auto i=con.begin(); i!=con.end(); i++){
             //     accVec.emplace_back(*i);
             //     }
@@ -31,9 +31,9 @@ namespace itertools{
             //auto index=i.begin();
             int countS, countF;
             iterator(){
-                for(auto temp:: i){
-                    countF++;
-                }
+                // for(auto temp:: i){
+                //     countF++;
+                // }
                 countS=0;  
             }
             void operator +(int b ){
@@ -47,18 +47,18 @@ namespace itertools{
                 return countS!=b.countS;
             }
             auto operator *(){
-                auto retunType= *(i.begin());
-                int tempCount=0;
-                for(auto temp: i){
-                    if(tempCount==0)
-                        continue;
-                    retunType+=temp;
-                    if(countS==tempCount)
-                        break;
-                    tempCount++;
-                }
-                return returnType;
-                
+            //     auto retunType= *(i.begin());
+            //     int tempCount=0;
+            //     for(auto temp: i){
+            //         if(tempCount==0)
+            //             continue;
+            //         retunType+=temp;
+            //         if(countS==tempCount)
+            //             break;
+            //         tempCount++;
+            //     }
+            //     return returnType;
+              return 3;  
             }
 
         };
