@@ -2,10 +2,17 @@
 #include <vector>
 namespace itertools{
     struct range{
-        int x, y;
+        int x, y, size;
+        range(){}
         range(int x, int y){
             this->x=x;
             this->y=y;
+            size=y-x;
+        }
+        range(range const &r){
+            this->x=r.x;
+            this->y=r.y;
+            size=r.y-r.x;
         }
         
 
@@ -35,6 +42,11 @@ namespace itertools{
             return i;
             
         }
+        void operator =(range r){
+                x=r.x;
+                y=r.y;
+                size=r.size;
+            }
 
         range::iterator end(){
             iterator i;
