@@ -52,14 +52,13 @@ namespace itertools{
                 return countS!=b.countS;
             }
             auto operator *(){
-                typename std::decay<decltype(*(conI->begin()))>::type returnType (*(conI->begin())) ;
-                T tempCon= *conI;
+                typename std::decay<decltype(*(conI->begin()))>::type returnType (*(conI->begin()));
                 int tempCount=0;
-                std::cout<<"begin "<<*(conI->begin())<< "\n"<<std::endl;
-                std::cout<<"returnType "<<returnType<< "\n"<<std::endl;
-                for(auto temp: tempCon){
-                    std::cout<<"count: "<<tempCount<<std::endl;
-                    std::cout<<" temp: "<<temp<<"\n"<<std::endl;
+                // std::cout<<"begin "<<*(conI->begin())<< "\n"<<std::endl;
+                // std::cout<<"returnType "<<returnType<< "\n"<<std::endl;
+                for(auto temp: *conI){
+                    // std::cout<<"count: "<<tempCount<<std::endl;
+                    // std::cout<<" temp: "<<temp<<"\n"<<std::endl;
                     if(tempCount==0){
                         tempCount++;
                         if(countS==0)
@@ -74,11 +73,6 @@ namespace itertools{
                 return returnType;  
             }
             
-            
-            auto toFunction(decltype(*(conI->begin())) x, decltype(*(conI->begin())) y, FUNCTION& f){
-                return (f)(x,y);
-            }
-
         };
 
         iterator begin(){
@@ -87,7 +81,7 @@ namespace itertools{
             
         }
 
-        auto end(){
+        iterator end(){
             
                     iterator i ((T&)con, (FUNCTION&) f);
                     i.countS=i.countF;
